@@ -1,0 +1,44 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<script>
+    function button_mouseover() {
+        $('#form_button').css('color', 'green');
+    }
+    $('#form_button').mouseover(button_mouseover);
+
+    function age_focus() {
+        $('form_age').css('background-color', 'red');
+    }
+    $('form_age').focus(age_focus);
+</script>
+
+{% if form != None %}
+<br />
+<h2>Заполните анкету</h2><br />
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <label id="form_age" for="{{ form.age.id_for_label }}">{{ form.age.label }}: </label>
+        {{ form.age }}<br /><br />
+        <label for="{{ form.sex.id_for_label }}">{{ form.sex.label }}: </label>
+        {{ form.sex }}<br /><br />
+        <label for="{{ form.game.id_for_label }}">{{ form.game.label }}: </label>
+        {{ form.game }}<br /><br />
+        <input id="form_button" type="submit" value="ОК" />
+
+    </form>
+</div>
+{% else %}
+<br />
+<h2>Благодарим за участие в анкетировании!</h2><br />
+<h3>Вы сообщили:</h3>
+<ul>
+    <li><span>Ваш возраст:</span> {{ data.age }}</li>
+    <li><span>Ваш пол:</span> {{ data.sex }}</li>
+    <li><span>Ваши инструменты:</span> {{ data.game }}</li>
+</ul>
+{% endif %}
+{% endblock %}
