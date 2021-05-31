@@ -3,17 +3,7 @@
 
 {% block content %}
 
-<script>
-    function button_mouseover() {
-        $('#form_button').css('color', 'green');
-    }
-    $('#form_button').mouseover(button_mouseover);
 
-    function age_focus() {
-        $('form_age').css('background-color', 'red');
-    }
-    $('form_age').focus(age_focus);
-</script>
 
 {% if form != None %}
 <br />
@@ -41,4 +31,20 @@
     <li><span>Ваши инструменты:</span> {{ data.game }}</li>
 </ul>
 {% endif %}
+<script>
+    function button_mouseout() {
+        $('#form_button').css('color', 'black');
+    }
+    $('#form_button').mouseout(button_mouseout);
+
+    function button_mouseover() {
+        $('#form_button').css('color', 'green');
+    }
+    $('#form_button').mouseover(button_mouseover);
+
+    function age_focus() {
+        $('form_age').css('background-color', 'red');
+    }
+    $('form_age').focus(age_focus);
+</script>
 {% endblock %}
