@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^newpost$', app.views.newpost, name='newpost'),
     url(r'^videopost$', app.views.videopost, name='videopost'),
     url(r'^(?P<parametr>\d+)/$', app.views.blogpost, name='blogpost'),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^registration$', app.views.registration, name='registration'),
     
     url(r'^login/$',
