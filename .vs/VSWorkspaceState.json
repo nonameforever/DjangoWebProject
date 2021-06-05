@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DjangoWebProject2",
+    "\\DjangoWebProject2\\DjangoWebProject2"
   ],
-  "SelectedNode": "\\DjangoWebProject2.sln",
+  "SelectedNode": "\\DjangoWebProject2\\DjangoWebProject2\\urls.py",
   "PreviewInSolutionExplorer": false
 }
