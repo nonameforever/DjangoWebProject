@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^registration$', app.views.registration, name='registration'),
     
     url(r'^login/$',
-        django.contrib.auth.views.LoginView,
+        django.contrib.auth.views.login,
         {
             'template_name': 'app/login.html',
             'authentication_form': app.forms.BootstrapAuthenticationForm,
@@ -50,7 +50,7 @@ urlpatterns = [
         },
         name='login'),
     url(r'^logout$',
-        django.contrib.auth.views.LogoutView,
+        django.contrib.auth.views.logout,
         {
             'next_page': '/',
         },
